@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}Home - AK Associates | Construction Company{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h2>Building Your Dreams Into Reality</h2>
+        <p>Quality construction under minimal budget with over 8 years of experience</p>
+        <a href="{{ url_for('contact') }}" class="btn">Get a Quote</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <i class="fas fa-home"></i>
+        <h3>Residential Construction</h3>
+        <p>Building dream homes with quality materials and skilled craftsmanship.</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-building"></i>
+        <h3>Commercial Projects</h3>
+        <p>Professional construction services for commercial properties.</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-tools"></i>
+        <h3>Renovation Services</h3>
+        <p>Transforming existing spaces into modern, functional areas.</p>
+    </div>
+</section>
+
+<section class="mission-section">
+    <h2>Our Mission & Vision</h2>
+    <div class="mission-content">
+        <div class="mission-card">
+            <h3>Mission</h3>
+            <p>To be the best client relationship based construction service, offering high quality construction on low budget and fulfil the dreams of our clients.</p>
+        </div>
+        <div class="mission-card">
+            <h3>Vision</h3>
+            <p>To become one of the best construction firms in the industry and community, achieving target of completing 200 projects by 2030 with high quality construction at a minimum budget.</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stat-item">
+        <h3>8+</h3>
+        <p>Years of Experience</p>
+    </div>
+    <div class="stat-item">
+        <h3>50+</h3>
+        <p>Completed Projects</p>
+    </div>
+    <div class="stat-item">
+        <h3>100%</h3>
+        <p>Client Satisfaction</p>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-grid">
+        <div class="testimonial-card">
+            <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">AK Associates delivered our dream home exactly as promised, on time and within budget. Their attention to detail was exceptional.</p>
+            <div class="client-info">
+                <p class="client-name">Mr. Chandrakumar</p>
+                <p class="client-project">Udumalpet Residence</p>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">The commercial complex they built for us has received many compliments. Professional team with excellent work ethics.</p>
+            <div class="client-info">
+                <p class="client-name">Mr. Vishagar</p>
+                <p class="client-project">Karur Commercial Project</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="recent-projects">
+    <h2>Recently Completed Projects</h2>
+    <div class="project-highlights">
+        <div class="project-highlight">
+            <div class="project-image">
+                <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Residential Project">
+            </div>
+            <div class="project-details">
+                <h3>Modern Villa</h3>
+                <p>Udumalpet | Completed: 2023</p>
+                <a href="{{ url_for('projects') }}" class="btn-small">View More</a>
+            </div>
+        </div>
+        <div class="project-highlight">
+            <div class="project-image">
+                <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Commercial Project">
+            </div>
+            <div class="project-details">
+                <h3>Office Complex</h3>
+                <p>Coimbatore | Completed: 2022</p>
+                <a href="{{ url_for('projects') }}" class="btn-small">View More</a>
+            </div>
+        </div>
+    </div>
+    <div class="view-all">
+        <a href="{{ url_for('projects') }}" class="btn">View All Projects</a>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="cta-content">
+        <h2>Ready to Start Your Project?</h2>
+        <p>Contact us today for a free consultation and quote</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('contact') }}" class="btn">Get in Touch</a>
+            <a href="tel:+919688910074" class="btn btn-outline">
+                <i class="fas fa-phone"></i> +91 96889 10074
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

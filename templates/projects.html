@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Our Projects{% endblock %}
+
+{% block content %}
+<section class="projects-hero">
+    <h2>Our Projects</h2>
+</section>
+
+<section class="projects-tabs">
+    <div class="tabs">
+        <a href="#completed" class="tab active">Completed Projects</a>
+        <a href="#ongoing" class="tab">Ongoing Projects</a>
+    </div>
+    
+    <div id="completed" class="tab-content active">
+        <h3>Completed Projects</h3>
+        <div class="projects-grid">
+            {% for project in completed_projects %}
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='images/projects/' + project.image) }}" alt="{{ project.name }}">
+                </div>
+                <div class="project-info">
+                    <h4>{{ project.name }}</h4>
+                    <p><strong>Location:</strong> {{ project.location }}</p>
+                    <p><strong>Client:</strong> {{ project.client }}</p>
+                    <p><strong>Completed:</strong> {{ project.year }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div id="ongoing" class="tab-content">
+        <h3>Ongoing Projects</h3>
+        <div class="projects-grid">
+            {% for project in ongoing_projects %}
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='images/projects/' + project.image) }}" alt="{{ project.name }}">
+                </div>
+                <div class="project-info">
+                    <h4>{{ project.name }}</h4>
+                    <p><strong>Location:</strong> {{ project.location }}</p>
+                    <p><strong>Client:</strong> {{ project.client }}</p>
+                    <p><strong>Status:</strong> {{ project.status }}% completed</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: {{ project.status }}%"></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="project-stats">
+    <h3>Project Statistics</h3>
+    <div class="stats-container">
+        <div class="stat-chart">
+            <img src="{{ url_for('static', filename='images/completion_chart.png') }}" alt="Project Completion Chart">
+        </div>
+        <div class="stat-details">
+            <h4>Our Project Completion Rate</h4>
+            <p>We maintain a 100% project completion rate with 95% of projects delivered on or before deadline.</p>
+            <div class="stat-item">
+                <h5>On Time</h5>
+                <div class="stat-bar">
+                    <div class="stat-fill" style="width: 95%"></div>
+                </div>
+                <span>95%</span>
+            </div>
+            <div class="stat-item">
+                <h5>Client Satisfaction</h5>
+                <div class="stat-bar">
+                    <div class="stat-fill" style="width: 98%"></div>
+                </div>
+                <span>98%</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

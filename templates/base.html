@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Associates - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>AK ASSOCIATES</h1>
+            <p>Engineer's & Builder's</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>No.7, 2nd Floor, CRK Kalpa Vriksham Complex</p>
+                <p>Udumalpet-642126</p>
+                <p>Phone: +91 96889 10074, +91 96298 10074</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('services') }}">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Mission</h3>
+                <p>To be the best client relationship based construction service, offering high quality construction on low budget.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AK Associates. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

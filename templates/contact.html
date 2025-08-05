@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<section class="contact-hero">
+    <h2>Contact AK Associates</h2>
+</section>
+
+<section class="contact-content">
+    <div class="contact-info">
+        <h3>Get in Touch</h3>
+        
+        <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+                <h4>Address</h4>
+                <p>No.7, 2nd Floor, CRK Kalpa Vriksham Complex</p>
+                <p>Udumalpet-642126</p>
+            </div>
+        </div>
+        
+        <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div>
+                <h4>Phone</h4>
+                <p>+91 96889 10074</p>
+                <p>+91 96298 10074</p>
+            </div>
+        </div>
+        
+        <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+                <h4>Email</h4>
+                <p>info@akassociates.com</p>
+            </div>
+        </div>
+        
+        <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+                <h4>Working Hours</h4>
+                <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.123456789012!2d77.12345678901234!3d10.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA3JzI0LjQiTiA3N8KwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    
+    <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form action="{{ url_for('submit_contact') }}" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
